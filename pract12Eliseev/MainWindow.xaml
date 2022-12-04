@@ -1,0 +1,336 @@
+﻿<Window
+    x:Class="pract12Eliseev.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:pract12Eliseev"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="400"
+    Height="400"
+    mc:Ignorable="d" ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*" />
+            <ColumnDefinition Width="50*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="90*" />
+            <RowDefinition Height="5*" />
+        </Grid.RowDefinitions>
+
+        <Menu
+            Grid.Row="0"
+            Grid.ColumnSpan="2"
+            Background="#FFA6EA94">
+            <MenuItem Header="Меню">
+
+                <MenuItem
+                    x:Name="aboutTask1"
+                    Background="#FFA6EA94"
+                    Click="aboutTask1_Click"
+                    Header="Задание 1" />
+
+                <MenuItem
+                    x:Name="aboutTask2"
+                    Background="#FFA6EA94"
+                    Click="aboutTask2_Click"
+                    Header="Задание 2" />
+
+                <MenuItem
+                    x:Name="mItDeveloper"
+                    Background="#FFA6EA94"
+                    Click="whoDeveloper_Click"
+                    Header="Разработчик" />
+                <Separator />
+
+                <MenuItem
+                    x:Name="exit"
+                    Background="#FFA6EA94"
+                    Click="exit_Click"
+                    Header="Выход" />
+            </MenuItem>
+        </Menu>
+
+        <TabControl Grid.Row="1" Grid.ColumnSpan="2">
+            <TabItem Background="#FFA6EA94" Header="Задание 1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
+
+
+                    <GroupBox
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Margin="5,0"
+                        Header="Исходные данные">
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label
+                                Margin="10"
+                                VerticalAlignment="Center"
+                                Content="Площадь круга" />
+                            <TextBox
+                                x:Name="squareOfCircleText"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Height="25"
+                                Margin="10"
+                                Padding="5"
+                                TextChanged="squareOfCircleText_TextChanged">
+                                <TextBox.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Header="Копировать" />
+                                        <MenuItem Header="Вставить" />
+                                    </ContextMenu>
+                                </TextBox.ContextMenu>
+                            </TextBox>
+                        </Grid>
+                    </GroupBox>
+
+                    <GroupBox
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Margin="5,0"
+                        Header="Результат">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="10"
+                                VerticalAlignment="Center"
+                                Content="Диаметр" />
+                            <TextBox
+                                x:Name="diametrOfCircle"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Margin="10"
+                                Padding="5"
+                                IsReadOnly="True">
+                                <TextBox.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Header="Копировать" />
+                                        <MenuItem Header="Вставить" />
+                                    </ContextMenu>
+                                </TextBox.ContextMenu>
+                            </TextBox>
+
+                            <Label
+                                Grid.Row="3"
+                                Grid.Column="0"
+                                Margin="10"
+                                VerticalAlignment="Center"
+                                Content="Длина окружности" />
+                            <TextBox
+                                x:Name="circumference"
+                                Grid.Row="3"
+                                Grid.Column="1"
+                                Margin="10"
+                                Padding="5"
+                                IsReadOnly="True">
+                                <TextBox.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Header="Копировать" />
+                                        <MenuItem Header="Вставить" />
+                                    </ContextMenu>
+                                </TextBox.ContextMenu>
+                            </TextBox>
+                        </Grid>
+                    </GroupBox>
+
+                    <Button
+                        x:Name="calculateTask1"
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        Margin="10"
+                        Background="#FFA6EA94"
+                        BorderBrush="#FFA6EA94"
+                        Click="calculateTask1_Click"
+                        Content="Рассчитать"
+                        FontWeight="Bold"
+                        Foreground="#FFFBFBFB"
+                        ToolTip="Рассчитать значение гипотенузы и периметра прямоугольного треугольника" />
+                    <Button
+                        x:Name="btnClearEx1"
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        Margin="10"
+                        Background="#FFA6EA94"
+                        BorderBrush="#FFECE99D"
+                        Click="btnClearEx1_Click"
+                        Content="Очистить"
+                        FontWeight="Bold"
+                        Foreground="#FFFBFBFB"
+                        ToolTip="Очистить все поля" />
+
+                </Grid>
+            </TabItem>
+
+            <TabItem
+                Height="20"
+                VerticalAlignment="Center"
+                Background="#FFA6EA94"
+                Foreground="#FF544B35"
+                Header="Задание 2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="60" />
+
+                    </Grid.RowDefinitions>
+
+                    <GroupBox
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Margin="5,5,5,0"
+                        Header="Исходные данные">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+
+                            <TextBlock
+                                Grid.Column="0"
+                                Height="50"
+                                VerticalAlignment="Center">
+                                Сколько прошло секунд с начала<LineBreak />
+                                суток?</TextBlock>
+
+                            <TextBox
+                                x:Name="secondsText"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Margin="15"
+                                Padding="5"
+                                TextChanged="secondsText_TextChanged">
+                                <TextBox.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Header="Копировать" />
+                                        <MenuItem Header="Вставить" />
+                                    </ContextMenu>
+                                </TextBox.ContextMenu>
+                            </TextBox>
+                        </Grid>
+                    </GroupBox>
+
+                    <GroupBox
+                        Grid.Row="1"
+                        Grid.ColumnSpan="2"
+                        Header="Результат">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <TextBlock
+                                Grid.Column="0"
+                                Height="50">
+                                Количество полных часов,<LineBreak />
+                                прошедших сначала суток.</TextBlock>
+                            
+                            <TextBox
+                                x:Name="fullHoursText"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Margin="15"
+                                Padding="5"
+                                TextChanged="fullHoursText_TextChanged">
+                                
+                                <TextBox.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Header="Копировать" />
+                                        <MenuItem Header="Вставить" />
+                                    </ContextMenu>
+                                </TextBox.ContextMenu>
+                            </TextBox>
+                            
+                        </Grid>
+
+                        
+                    </GroupBox>
+
+
+
+                    <Button
+                        x:Name="calculateTask2"
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        Margin="10"
+                        Background="#FFA6EA94"
+                        BorderBrush="#FFECE99D"
+                        Click="calculateTask2_Click"
+                        Content="Рассчитать"
+                        FontWeight="Bold"
+                        Foreground="#FFFBFBFB"
+                        ToolTip="Найти цифру, которая соответствует разряду сотен" />
+
+
+                    <Button
+                        x:Name="clearTask2"
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        Margin="10"
+                        Background="#FFA6EA94"
+                        BorderBrush="#FFECE99D"
+                        Click="clearTask2_Click"
+                        Content="Очистить"
+                        FontWeight="Bold"
+                        Foreground="#FFFBFBFB"
+                        ToolTip="Очистить все поля" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+        <StatusBar Grid.Row="2" Grid.ColumnSpan="2">
+            <TextBlock x:Name="tbWatch" />
+            <Separator />
+            <TextBlock x:Name="tbDate" />
+        </StatusBar>
+    </Grid>
+</Window>
