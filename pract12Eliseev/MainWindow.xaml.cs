@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
+
 namespace pract12Eliseev
 {
     /// <summary>
@@ -93,16 +94,17 @@ namespace pract12Eliseev
         }
         private void secondsText_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            fullHoursText.Text = null;
         }
         private void squareOfCircleText_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            diametrOfCircle.Text = null;
+            circumference.Text= null;
         }
 
         private void fullHoursText_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            fullHoursText.Text = null;
         }
 
         DispatcherTimer timer;

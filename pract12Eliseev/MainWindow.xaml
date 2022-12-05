@@ -7,8 +7,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="MainWindow"
     Width="400"
-    Height="400"
-    mc:Ignorable="d" ResizeMode="CanMinimize">
+    Height="410"
+    mc:Ignorable="d" ResizeMode="CanMinimize"
+    Loaded ="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50*" />
@@ -56,7 +57,7 @@
 
         <TabControl Grid.Row="1" Grid.ColumnSpan="2">
             <TabItem Background="#FFA6EA94" Header="Задание 1">
-                <Grid>
+                <Grid Height="305">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
@@ -273,15 +274,15 @@
                                 Height="50">
                                 Количество полных часов,<LineBreak />
                                 прошедших сначала суток.</TextBlock>
-                            
+
                             <TextBox
                                 x:Name="fullHoursText"
                                 Grid.Row="0"
                                 Grid.Column="1"
                                 Margin="15"
                                 Padding="5"
-                                TextChanged="fullHoursText_TextChanged">
-                                
+                                >
+
                                 <TextBox.ContextMenu>
                                     <ContextMenu>
                                         <MenuItem Header="Копировать" />
@@ -289,10 +290,10 @@
                                     </ContextMenu>
                                 </TextBox.ContextMenu>
                             </TextBox>
-                            
+
                         </Grid>
 
-                        
+
                     </GroupBox>
 
 
@@ -327,10 +328,13 @@
             </TabItem>
         </TabControl>
 
+        
         <StatusBar Grid.Row="2" Grid.ColumnSpan="2">
             <TextBlock x:Name="tbWatch" />
             <Separator />
             <TextBlock x:Name="tbDate" />
+            <Separator />
+            <TextBlock Text="Вариант 9, практическая 12."/>
         </StatusBar>
     </Grid>
 </Window>
